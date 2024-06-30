@@ -16,7 +16,7 @@ const PieVariant: React.FC = () => {
     if (expenseData) {
       const formattedData = Object.keys(expenseData)
         .filter(key => key !== "month")
-        .map(key => ({ name: key, value: expenseData[key] }));
+        .map(key => ({ name: key, value: (expenseData as { [key: string]: any })[key] }));
       setData(formattedData);
     }
   }, [selectedMonth]);
